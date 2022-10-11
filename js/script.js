@@ -19,10 +19,10 @@ class Equipo {
 }
 
 const Equipos = [
-    new Equipo('Racing', 'Juan Domingo Peron', 80000, 'V.Blaco', 'Fernando Gago', 1903, 'Los Pibes de Racing', 1),
-    new Equipo('Boca', 'Bombonera', 240000, 'Ameal', 'Hugo Ibarra', 1905, 'La 12', 2),
-    new Equipo('River', 'Monumental', 16000, 'Jorge Brito','Gallardo', 1901, 'Los Borrachos del tabln', 3),
-    new Equipo('Independiente', 'Libertadores de america', 100000, 'Doman', ' Julio César Falcioni', 1904, 'Los Diablo Rojos', 4)
+    new Equipo('racing', 'Juan Domingo Peron', 80000, 'V.Blaco', 'Fernando Gago', 1903, 'Los Pibes de Racing', 1),
+    new Equipo('boca', 'Bombonera', 240000, 'Ameal', 'Hugo Ibarra', 1905, 'La 12', 2),
+    new Equipo('river', 'Monumental', 16000, 'Jorge Brito','Gallardo', 1901, 'Los Borrachos del tabln', 3),
+    new Equipo('independiente', 'Libertadores de america', 100000, 'Doman', ' Julio César Falcioni', 1904, 'Los Diablo Rojos', 4)
 ]
 console.log(Equipos);
 
@@ -95,18 +95,18 @@ return info;
 
 }
 
-alert(string_resultado(ordenar(criterio,Equipos)))
+alert(string_resultado(ordenar(criterio,Equipos)));
 
 
 
 
-let equipo_elegido = prompt('Escribí el nombre del equipo que queres ver');
+let equipo_elegido = prompt('Escribí el nombre del equipo que queres ver// en caso de que solo apretes enter te va a dar los datos de los estadios.');
 
 const filtrado = Equipos.filter((equipo)=>equipo.estadio.toLowerCase().includes(equipo_elegido.toLowerCase()))
 
 if (filtrado.length==0){
-    alert('Bien tu equipo esta en la lista');
+    alert('si solo apretas enter te va a dar los datos de los estadios,');
 }else{
     const imprimible = filtrado.map((equipo)=>equipo.fundado);
-    alert('Los equips de nuestro catálogo, no estan  icluidos, son:\n- ' + imprimible.join('\n- '));
+    alert('Los equipos, son:\n- ' + imprimible.join('\n- '));
 }
