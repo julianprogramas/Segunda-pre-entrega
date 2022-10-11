@@ -100,13 +100,13 @@ alert(string_resultado(ordenar(criterio,Equipos)));
 
 
 
-let equipo_elegido = prompt('Escribí el nombre del equipo que queres ver// en caso de que solo apretes enter te va a dar los datos de los estadios.');
+let equipo_elegido = prompt('Escribí el nombre del equipo para saber su estadio y si queres saber tdos los estadios presiona enter');
 
-const filtrado = Equipos.filter((equipo)=>equipo.estadio.toLowerCase().includes(equipo_elegido.toLowerCase()))
+const filtrado = Equipos.filter((equipo)=>equipo.club.toLowerCase().includes(equipo_elegido.toLowerCase()))
 
 if (filtrado.length==0){
-    alert('si solo apretas enter te va a dar los datos de los estadios,');
+     alert('No tengo inforamción de ese club'); 
 }else{
-    const imprimible = filtrado.map((equipo)=>equipo.fundado);
-    alert('Los equipos, son:\n- ' + imprimible.join('\n- '));
+     const  imprimible = filtrado.map((equipo)=>equipo.estadio );
+    alert('escribi el nombre de tu club:\n- ' + imprimible.join('\n- '));
 }
